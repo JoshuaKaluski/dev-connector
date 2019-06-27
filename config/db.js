@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/devConnector', {useNewUrlParser: true});
+    await mongoose.connect('mongodb://localhost:27017/devConnector', {
+      useNewUrlParser: true,
+      useCreateIndex: true
+    });
 
     console.log("MongoDB Connected...");
   } catch (e) {
